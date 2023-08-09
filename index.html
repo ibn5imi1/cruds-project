@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Management System CURDS</title>
+</head>
+<body>
+    <!-- start header -->
+    <header>
+        <div class="container">
+            <h2>CRUDS</h2>
+            <h4>PRODUCTS MANAGEMENT SYSTEM</h4>
+        </div>
+    </header>
+    <!-- end header -->
+
+    <!-- start inputs -->
+    <section class="inputs">
+        <div class="container">
+            <input id="title" type="text" title="write name of product" placeholder="title">
+            <div class="forMoney">
+                <input onkeyup="getTotal()" id="price" type="number" title="write the price" placeholder="price">
+                <input onkeyup="getTotal()" id="tax" type="number" title="write the tax" placeholder="tax">
+                <input onkeyup="getTotal()" id="ads" type="number" title="how much for ads" placeholder="ads">
+                <input onkeyup="getTotal()" id="discount" type="number" title="how much for discount" placeholder="discount">
+                <p id="total">total:-</p>
+            </div>
+            <input id="count" type="number" title="how many products" placeholder="count">
+            <input id="category" type="text" title="write category" placeholder="category">
+            <button id="create">create</button>
+        </div>
+    </section>
+    <!-- end inputs -->
+
+    <!-- start search about -->
+    <section>
+        <div class="container">
+            <div class="searchAbout">
+                <input onkeyup="searchData(this.value)" id="search" type="search" title="search about product" placeholder="search">
+                <div class="searchBy">
+                    <button onclick="getSearchMode(this.id)" id="searchTitle">Search By Title</button>
+                    <button onclick="getSearchMode(this.id)" id="searchCategory">Search By Category</button>
+                </div>
+                <div id="deleteAll"></div>
+            </div>
+        </div>
+    </section>
+    <!-- end search about -->
+
+    <!-- start outputs -->
+    <section class="outputs">
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>ads</th>
+                        <th>discount</th>
+                        <th>total</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- end outputs -->
+
+    <script src="index.js"></script>
+</body>
+</html>
